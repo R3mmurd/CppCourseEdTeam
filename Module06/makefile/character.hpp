@@ -24,15 +24,15 @@ public:
 
     void play_out_encounter(Encounter* encounter);
 
-    void play_out_floor_trap(FloorTrap* floor_trap);
+    virtual void play_out_floor_trap(FloorTrap* floor_trap) = 0;
 
-    void play_out_monster(Monster* monster);
+    virtual void play_out_monster(Monster* monster);
 
-    void play_out_potion(Potion* potion);
+    virtual void play_out_potion(Potion* potion) = 0;
 
-    void play_out_armor(Armor* armor);
+    virtual void play_out_armor(Armor* armor) = 0;
 
-    std::string to_string() const;
+    virtual std::string to_string() const = 0;
 
 protected:
     static constexpr int max_hit_points = 50;

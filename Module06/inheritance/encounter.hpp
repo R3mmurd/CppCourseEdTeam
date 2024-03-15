@@ -13,6 +13,10 @@ public:
 
     int get_id() const;
 
+    void play_out(Character* character);
+
+    std::string to_string() const;
+
 protected:
     int id = 1;
 };

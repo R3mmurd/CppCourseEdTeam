@@ -36,16 +36,6 @@ void Character::play_out_encounter(Encounter* encounter)
     encounter->play_out(this);
 }
 
-void Character::play_out_floor_trap(FloorTrap* floor_trap)
-{
-    // Empty
-}
-
-void Character::play_out_monster(Monster* monster)
-{
-    // Empty
-}
-
 void Character::play_out_potion(Potion* potion)
 {
     this->hit_points += potion->get_hit_points();
@@ -54,18 +44,6 @@ void Character::play_out_potion(Potion* potion)
     {
         this->hit_points = Character::max_hit_points;
     }
-}
-
-void Character::play_out_armor(Armor* armor)
-{
-    // Empty
-}
-
-std::string Character::to_string() const
-{
-    return "Character [id: "s + std::to_string(this->id)
-        + ", hit_points: "s + std::to_string(this->hit_points)
-        + "]"s;
 }
 
 Knight::Knight()

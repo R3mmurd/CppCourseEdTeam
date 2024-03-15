@@ -1,4 +1,5 @@
 #include "encounter.hpp"
+#include "character.hpp"
 
 using namespace std::literals;
 
@@ -11,6 +12,16 @@ Encounter::Encounter(int _id)
 int Encounter::get_id() const
 {
     return this->id;
+}
+
+void Encounter::play_out(Character* character)
+{
+    // Empty
+}
+
+std::string Encounter::to_string() const
+{
+    return "Encounter [id: "s + std::to_string(this->id) + "]"s;
 }
 
 int FloorTrap::id_counter = 0;
