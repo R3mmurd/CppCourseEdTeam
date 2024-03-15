@@ -46,6 +46,8 @@ void Character::play_out_potion(Potion* potion)
     }
 }
 
+int Knight::id_counter = 0;
+
 Knight::Knight()
     : Character{++id_counter}
 {
@@ -83,6 +85,14 @@ void Knight::play_out_armor(Armor* armor)
     }
 }
 
+std::string Knight::to_string() const
+{
+    return "Knight [id: "s + std::to_string(this->id)
+        + ", hit_points: "s + std::to_string(this->hit_points)
+        + ", armor_points: "s + std::to_string(this->armor_points)
+        + "]"s;
+}
+
 void Knight::apply_damage(int dam)
 {
     if (this->armor_points == 0)
@@ -100,6 +110,8 @@ void Knight::apply_damage(int dam)
         this->armor_points -= dam;
     }
 }
+
+int Wizard::id_counter = 0;
 
 Wizard::Wizard()
     : Character{++id_counter}
@@ -155,4 +167,12 @@ void Wizard::play_out_potion(Potion* potion)
 void Wizard::play_out_armor(Armor* armor)
 {
     // Nothing to do
+}
+
+std::string Wizard::to_string() const
+{
+    return "Wizard [id: "s + std::to_string(this->id)
+        + ", hit_points: "s + std::to_string(this->hit_points)
+        + ", magic_points: "s + std::to_string(this->magic_points)
+        + "]"s;
 }

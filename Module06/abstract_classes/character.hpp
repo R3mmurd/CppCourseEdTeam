@@ -56,6 +56,8 @@ public:
 
     void play_out_armor(Armor* armor);
 
+    std::string to_string() const;
+
 private:
     void apply_damage(int dam);
 
@@ -81,6 +83,8 @@ public:
     void play_out_potion(Potion* potion);
 
     void play_out_armor(Armor* armor);
+
+    std::string to_string() const;
 
 private:
     static constexpr int max_magic_points = 20;

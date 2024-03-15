@@ -40,7 +40,7 @@ void FloorTrap::play_out(Character* character)
 
 std::string FloorTrap::to_string() const
 {
-    return "FloorTreap [id: "s + std::to_string(this->id)
+    return "FloorTrap [id: "s + std::to_string(this->id)
         + ", damage: "s + std::to_string(this->damage)
         + "]"s;
 }

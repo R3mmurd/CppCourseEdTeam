@@ -3,18 +3,17 @@
 #include "character.hpp"
 #include "encounter.hpp"
 
+
+
 int main()
 {
-    Character character{0, 20};
-    std::cout << "Created " << character.to_string() << "\n";
+    std::shared_ptr<Character> knight = std::make_shared<Knight>(15, 3);
+    std::cout << "Created " << knight->to_string() << "\n";
 
-    Knight knight{15, 3};
-    std::cout << "Created " << knight.to_string() << "\n";
+    std::shared_ptr<Character> wizard = std::make_shared<Wizard>(10, 2);
+    std::cout << "Created " << wizard->to_string() << "\n";
 
-    Wizard wizard{10, 2};
-    std::cout << "Created " << wizard.to_string() << "\n";
-
-    /*std::shared_ptr<Encounter> floor_trap = std::make_shared<FloorTrap>(3);
+    std::shared_ptr<Encounter> floor_trap = std::make_shared<FloorTrap>(3);
     std::cout << "Created " << floor_trap->to_string() << "\n";
 
     std::shared_ptr<Encounter> monster = std::make_shared<Monster>(5, 3);
@@ -44,7 +43,7 @@ int main()
     std::cout << "Knight vs Armor\n";
     knight->play_out_encounter(armor.get());
     std::cout << knight->to_string() << "\n";
-    std::cout << armor->to_string() << "\n";*/
+    std::cout << armor->to_string() << "\n";
 
     return 0;
 }
