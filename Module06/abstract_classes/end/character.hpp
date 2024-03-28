@@ -58,12 +58,6 @@ public:
 
     std::string to_string() const override;
 
-    Knight& operator = (const Knight& knight);
-
-    bool operator == (const Knight& Knight) const;
-
-    bool operator != (const Knight& Knight) const;
-
 private:
     void apply_damage(int dam);
 

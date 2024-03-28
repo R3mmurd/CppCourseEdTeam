@@ -24,15 +24,15 @@ public:
 
     void play_out_encounter(Encounter* encounter);
 
-    virtual void play_out_floor_trap(FloorTrap* floor_trap) = 0;
+    void play_out_floor_trap(FloorTrap* floor_trap);
 
-    virtual void play_out_monster(Monster* monster) = 0;
+    void play_out_monster(Monster* monster);
 
-    virtual void play_out_potion(Potion* potion);
+    void play_out_potion(Potion* potion);
 
-    virtual void play_out_armor(Armor* armor) = 0;
+    void play_out_armor(Armor* armor);
 
-    virtual std::string to_string() const = 0;
+    std::string to_string() const;
 
 protected:
     static constexpr int max_hit_points = 50;
@@ -50,19 +50,13 @@ public:
 
     int get_armor_points() const;
 
-    void play_out_floor_trap(FloorTrap* floor_trap) override;
+    void play_out_floor_trap(FloorTrap* floor_trap);
 
-    void play_out_monster(Monster* monster) override;
+    void play_out_monster(Monster* monster);
 
-    void play_out_armor(Armor* armor) override;
+    void play_out_armor(Armor* armor);
 
-    std::string to_string() const override;
-
-    Knight& operator = (const Knight& knight);
-
-    bool operator == (const Knight& Knight) const;
-
-    bool operator != (const Knight& Knight) const;
+    std::string to_string() const;
 
 private:
     void apply_damage(int dam);
@@ -82,15 +76,15 @@ public:
 
     int get_magic_points() const;
 
-    void play_out_floor_trap(FloorTrap* floor_trap) override;
+    void play_out_floor_trap(FloorTrap* floor_trap);
 
-    void play_out_monster(Monster* monster) override;
+    void play_out_monster(Monster* monster);
 
-    void play_out_potion(Potion* potion) override;
+    void play_out_potion(Potion* potion);
 
-    void play_out_armor(Armor* armor) override;
+    void play_out_armor(Armor* armor);
 
-    std::string to_string() const override;
+    std::string to_string() const;
 
 private:
     static constexpr int max_magic_points = 20;

@@ -36,6 +36,16 @@ void Character::play_out_encounter(Encounter* encounter)
     encounter->play_out(this);
 }
 
+void Character::play_out_floor_trap(FloorTrap* floor_trap)
+{
+    // Empty
+}
+
+void Character::play_out_monster(Monster* monster)
+{
+    // Empty
+}
+
 void Character::play_out_potion(Potion* potion)
 {
     this->hit_points += potion->get_hit_points();
@@ -44,6 +54,18 @@ void Character::play_out_potion(Potion* potion)
     {
         this->hit_points = Character::max_hit_points;
     }
+}
+
+void Character::play_out_armor(Armor* armor)
+{
+    // Empty
+}
+
+std::string Character::to_string() const
+{
+    return "Character [id: "s + std::to_string(this->id)
+        + ", hit_points: "s + std::to_string(this->hit_points)
+        + "]"s;
 }
 
 int Knight::id_counter = 0;
@@ -91,29 +113,6 @@ std::string Knight::to_string() const
         + ", hit_points: "s + std::to_string(this->hit_points)
         + ", armor_points: "s + std::to_string(this->armor_points)
         + "]"s;
-}
-
-Knight& Knight::operator = (const Knight& knight)
-{
-    if (this == &knight)
-    {
-        return *this;
-    }
-
-    this->id = knight.id;
-    this->hit_points = knight.hit_points;
-    this->armor_points = knight.armor_points;
-    return *this;
-}
-
-bool Knight::operator == (const Knight& Knight) const
-{
-    return this->id == Knight.id;
-}
-
-bool Knight::operator != (const Knight& Knight) const
-{
-    return this->id != Knight.id;
 }
 
 void Knight::apply_damage(int dam)

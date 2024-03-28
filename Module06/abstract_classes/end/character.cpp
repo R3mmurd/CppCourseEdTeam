@@ -93,29 +93,6 @@ std::string Knight::to_string() const
         + "]"s;
 }
 
-Knight& Knight::operator = (const Knight& knight)
-{
-    if (this == &knight)
-    {
-        return *this;
-    }
-
-    this->id = knight.id;
-    this->hit_points = knight.hit_points;
-    this->armor_points = knight.armor_points;
-    return *this;
-}
-
-bool Knight::operator == (const Knight& Knight) const
-{
-    return this->id == Knight.id;
-}
-
-bool Knight::operator != (const Knight& Knight) const
-{
-    return this->id != Knight.id;
-}
-
 void Knight::apply_damage(int dam)
 {
     if (this->armor_points == 0)
