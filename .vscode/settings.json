@@ -116,6 +116,8 @@
     "iomanip": "cpp",
     "sstream": "cpp",
     "cfenv": "cpp",
-    "cinttypes": "cpp"
+    "cinttypes": "cpp",
+    "set": "cpp",
+    "unordered_set": "cpp"
   }
 }
