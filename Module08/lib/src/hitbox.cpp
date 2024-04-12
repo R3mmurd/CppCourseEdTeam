@@ -30,5 +30,15 @@ float HitBox::get_y2() const
 
 bool HitBox::collides(const HitBox& hb) const
 {
-    
+    if (this->x1 > hb.x2 || this->x2 < hb.x1)   
+    {
+        return false;
+    }
+
+    if (this->y1 > hb.y2 || this->y2 < hb.y1)   
+    {
+        return false;
+    }
+
+    return true;
 }

@@ -41,7 +41,7 @@ void PongGame::exec()
 
     while (this->running)
     {
-        this->handle_events();    
+        this->handle_events();
 
         if (this->redraw && al_is_event_queue_empty(this->queue))
         {
@@ -64,7 +64,7 @@ void PongGame::handle_events()
 
     if (event.type == ALLEGRO_EVENT_TIMER)
     {
-        redraw = true;
+        this->redraw = true;
     }
     else if (event.type == ALLEGRO_EVENT_DISPLAY_CLOSE)
     {

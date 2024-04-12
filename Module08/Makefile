@@ -4,7 +4,7 @@ INCLUDE_DIR = lib/include
 SRC_DIR = lib/src
 BUILD_DIR = build
 
-OBJ_RULES =  settings.o hitbox.o ball.o paddle.o pong_table.o pong_game.o
+OBJ_RULES = settings.o hitbox.o ball.o paddle.o pong_table.o pong_game.o
 OBJECTS = $(BUILD_DIR)/*.o
 
 INCLUDE = -I.

@@ -11,6 +11,13 @@
 class PongTable
 {
 public:
+    enum class State
+    {
+        Serving,
+        Playing,
+        Done
+    };
+
     PongTable();
 
     void handle_input(const ALLEGRO_KEYBOARD_STATE& kb_state);
@@ -28,6 +35,8 @@ private:
     int player2_score;
     int serving_player;
     int winning_player;
+
+    State state;
 };
 
 #endif
